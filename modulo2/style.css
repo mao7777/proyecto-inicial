@@ -1,0 +1,28 @@
+
+
+@media screen and (min-width: 0px) and ( max-width: 480px )
+{
+    body {
+        background: red  ;
+    }
+}
+
+@media screen and (min-width: 481px) and ( max-width: 765px ) {
+    body {
+        background: green  ;
+    }
+}
+
+
+@media screen and (min-width: 766px) and ( max-width: 991px ) {
+    body {
+        background: blue;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        background: orange;
+    }
+}
+
