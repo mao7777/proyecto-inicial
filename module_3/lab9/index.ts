@@ -1,41 +1,46 @@
-//Persona
 interface Person {
     nid: number;
     name: string;
-    age: number ;
-  }
+    age: number;
 
-// Estudiante
-class Student implements Person {
-    nid: number;
-    name: string;
-    age: number ;
-    id: number;
-    classes: Array<string>;
-  
-    getid(): number {
-        return this.id;
-    }
+    getNid(): number;
+    getName(): string;
+    getAge(): number;
 
-    setid(id: number): void {
-        this.id=id;
-    }
-
+    setNid(nid:number): void;
+    setName(name:string): void;
+    setAge(age:number): void;
 }
 
-// Maestro
-class Teacher implements Person {
+class Student implements Person{
     nid: number;
     name: string;
-    age: number ;
-    id: number;
-    grade: Array<string>;
-    classroom: Array<number>;
- }
+    age: number;
 
+    constructor(){}
 
-//var student=new Student(123,'Pedro',15,20,['Español','Matemáticas']);
-//var teacher=new Teacher(789,'María',18,44,['Séptimo','Óctavo','Décimo'],[201,305,404]);
+    getNid(): number{
+        return this.nid;
+    }
+    getName(): string{
+        return this.name;
+    };
+    getAge(): number{
+        return this.age;
+    };
 
-//console.log(student );
-//console.log(teacher);
+    setNid(nid: number): void{
+        this.nid = nid;
+    }
+    setName(name: string): void{
+        this.name = name;
+    }
+    setAge(age:number): void{
+        this.age = age;
+    }
+}
+
+var student = new Student();
+
+student.setAge(55);
+console.log(student.getAge());
