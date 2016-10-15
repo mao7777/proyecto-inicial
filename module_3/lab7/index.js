@@ -22,7 +22,7 @@ var Car = (function (_super) {
 var Motorcycle = (function (_super) {
     __extends(Motorcycle, _super);
     function Motorcycle() {
-        _super.call(this, 2, 'gasolina');
+        _super.call(this, 2, 'gasoline');
     }
     return Motorcycle;
 }(Vehicle));

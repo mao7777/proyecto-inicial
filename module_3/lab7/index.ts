@@ -3,26 +3,27 @@ class Vehicle{
 	fuel: string;
 	private color: string;
 
-	constructor(wheel: number, fuel: string, color: string ='white'){
-		this.color = color;
-		this.fuel=fuel;
-		this.wheel=wheel;
+	constructor (wheel: number, fuel: string, color:string ='white'){
+	this.color=color;
+	this.fuel=fuel;
+	this.wheel=wheel;
 	}
 }
 
-class Car extends Vehicle {
+class Car extends Vehicle{
 	constructor(){
-		super(6,'gas','red');
+		super(6,'gas','red')
 	}
 }
 
-class Motorcycle extends Vehicle {
+class Motorcycle extends Vehicle{
 	constructor(){
-		super(2,'gasolina');
+		super(2,'gasoline')
 	}
 }
 
 var car=new Car();
 var motorcycle=new Motorcycle();
+
 console.log(car);
 console.log(motorcycle);
