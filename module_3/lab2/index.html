@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>Formulario</title>
+    
+<script type="text/javascript" >
+function probar () {
+	var arreglo = new Array();
+	numero =document.getElementsByName("nombre")[0].value;
+	for(var i = 0; i < numero; i++) {
+  		arreglo[i]=(i+1)*10;
+		}
+		alert(arreglo);
+	}
+	
+</script>
+  </head>
+  <body>
+     <form action="" method="post" enctype="text/plain">
+      <h1 id="nombre">Arrays</h1>
+      Introduce un valor: <input name="nombre" type="text"> <br>
+      <input value="Capturar" type="submit" onClick="javascript: probar()"> </form>
+    </body>
+</html>
