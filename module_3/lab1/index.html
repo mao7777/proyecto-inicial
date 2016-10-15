@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>Formulario</title>
+    
+<script type="text/javascript">
+function probar () {
+	var numero =document.getElementsByName("nombre")[0].value;
+	var resultado=1;
+	var i =1;
+	while(i <= numero) {
+  	resultado =resultado*i;
+  	i++;
+	}
+alert(resultado);
+}
+</script>
+  </head>
+  <body>
+     <form action="" method="post" enctype="text/plain">
+      <h1 id="nombre">Factorial</h1>
+      Introduce un valor: <input name="nombre" type="text"> <br>
+      <input value="Calcularr" type="submit" onClick="javascript: probar()"> </form>
+    </body>
+</html>
