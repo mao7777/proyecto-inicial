@@ -9,29 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Ride = (function () {
-    function Ride() {
+var platform_browser_1 = require('@angular/platform-browser');
+var app_component_1 = require('./component/app.component');
+var product_detail_component_1 = require('./component/product-detail.component');
+var forms_1 = require('@angular/forms');
+var AppModule = (function () {
+    function AppModule() {
     }
-    return Ride;
-}());
-exports.Ride = Ride;
-var AppComponent = (function () {
-    function AppComponent() {
-        this.ride = {
-            units: 50,
-            festives: 1900,
-            ptp: 1700,
-            default: 4100
-        };
-    }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/templates/product.html'
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                product_detail_component_1.ProductDetailComponent
+            ],
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], AppModule);
+    return AppModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.AppModule = AppModule;
+//# sourceMappingURL=app.module.js.map
