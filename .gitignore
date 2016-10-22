@@ -91,3 +91,6 @@ $RECYCLE.BIN/
 dev/
 cms/core/config/
 node_modules/
+
+git rm -r --cached node_modules
+git commit -m "removing node_modules"

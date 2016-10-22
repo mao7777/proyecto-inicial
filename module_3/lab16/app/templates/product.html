@@ -1,0 +1,18 @@
+<h1>{{ title }}</h1>
+<ul>
+    <li *ngFor="let user of users"
+    (click)="onSelect(user)">
+
+        <span>{{user.id}}</span> {{user.name | uppercase }} 
+    </li>
+</ul>
+
+<div *ngIf="selected">
+<hr />
+    <label>Name: </label><br />
+    <input [(ngModel)]="selected.name" placeholder="name"><br />
+    <label>Address: </label><br />
+    <textarea [(ngModel)]="selected.address" placeholder="address"></textarea><br />
+    <label>phone: </label><br />
+    <input [(ngModel)]="selected.phone" placeholder="phone"><br />
+</div>
