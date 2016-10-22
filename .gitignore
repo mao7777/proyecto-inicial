@@ -83,3 +83,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+#################
+## Directories
+#################
+
+dev/
+cms/core/config/
+node_modules/
