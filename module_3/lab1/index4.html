@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>Formulario</title>
+    
+<script type="text/javascript">
+function probar () {
+	var ValorUnidad=4100/50
+	var unidades =parseInt(document.getElementsByName("nombre")[0].value);
+	/*var festivos =document.getElementsByName("festivos")[0].value;*/
+	unidades=unidades+0;
+	var resultado=0;
+	
+	if (unidades < 50) {
+    	resultado=4100;
+	} else { 
+    	resultado= ValorUnidad * unidades;
+	}
+	if(document.getElementById("festivos").checked)
+	{
+	  resultado=resultado+1900;
+	}
+	if(document.getElementById("aeropuerto").checked)
+	{
+	  resultado=resultado+3900;
+	}
+	if(document.getElementById("puerta").checked)
+	{
+	  resultado=resultado+1700;
+	}
+	document.getElementById("resultado").innerHTML = resultado;	
+	event.preventDefault();
+}
+</script>
+  </head>
+  <body>
+     <form action="" method="post" enctype="text/plain">
+      <h1 id="nombre">RIDS</h1>
+      Introduce un valor de unidades: <input name="nombre" type="text"> <br>
+      Incluye festivos: <input name="festivos" type="checkbox" id="festivos" value="checkbox" /><br>
+      Incluye ida Aeropuerto: <input name="aeropuerto" type="checkbox" id="aeropuerto" value="checkbox" /><br>
+      Incluye Servicio puerta a puerta: <input name="puerta" type="checkbox" id="puerta" value="checkbox" /><br>
+      <input value="Calcular" type="submit" onClick="javascript: probar()"> 
+      </form>
+      Resultado=<div id="resultado"></div>
+      
+      </body>
+</html>
