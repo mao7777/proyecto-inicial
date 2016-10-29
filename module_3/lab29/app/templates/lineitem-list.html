@@ -1,0 +1,15 @@
+<h1>{{ title }}</h1>
+<ul>
+    <li *ngFor="let lineitem of lineitems"
+        [class.pepito]="lineitem === selected"
+        (click)="onSelect(lineitem)">
+        <span>{{lineitem.linenumber}}</span> {{lineitem.productid}}
+    </li>
+</ul>
+
+<div *ngIf="selected">
+    <h2>
+        {{selected.productid | uppercase}} is my LineNumber
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>
