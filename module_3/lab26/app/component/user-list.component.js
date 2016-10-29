@@ -11,14 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var UserListComponent = (function () {
     function UserListComponent() {
+        this.title = 'User-list';
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], UserListComponent.prototype, "user", void 0);
     UserListComponent = __decorate([
         core_1.Component({
-            selector: 'user-list',
+            selector: 'about-app',
             templateUrl: 'app/templates/user-list.html'
         }), 
         __metadata('design:paramtypes', [])

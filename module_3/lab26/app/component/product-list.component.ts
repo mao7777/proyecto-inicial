@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '../model/product';
 
 @Component({
-    selector: 'about-app',
-    templateUrl: 'app/templates/product-list.html'
+	selector: 'product-list',
+	templateUrl: 'app/templates/product-list.html'
 })
 
 export class ProductListComponent {
-    title = 'Product list';
+	@Input()
+	product: Product;
 }

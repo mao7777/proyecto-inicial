@@ -9,13 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var product_1 = require('../model/product');
 var ProductListComponent = (function () {
     function ProductListComponent() {
-        this.title = 'Product list';
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', product_1.Product)
+    ], ProductListComponent.prototype, "product", void 0);
     ProductListComponent = __decorate([
         core_1.Component({
-            selector: 'about-app',
+            selector: 'product-list',
             templateUrl: 'app/templates/product-list.html'
         }), 
         __metadata('design:paramtypes', [])

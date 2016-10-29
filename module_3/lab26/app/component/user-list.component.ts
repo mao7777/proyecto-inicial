@@ -1,12 +1,10 @@
-import { Component, Input } from '@angular/core';
-
+import { Component } from '@angular/core';
 
 @Component({
-	selector: 'user-list',
-	templateUrl: 'app/templates/user-list.html'
+    selector: 'about-app',
+    templateUrl: 'app/templates/user-list.html'
 })
 
 export class UserListComponent {
-	@Input()
-	user: User;
+    title = 'User-list';
 }

@@ -9,16 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var product_service_1 = require('../service/product.service');
 var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Componente padre";
+    function AppComponent(productService) {
+        this.productService = productService;
+        this.title = "Mis productos";
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.productService.getProducts()
+            .then(function (products) { return _this.products = products; })
+            .catch(function (error) { return console.log(error); });
+    };
+    AppComponent.prototype.onSelect = function (product) {
+        this.selected = product;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app/templates/app-component.html',
+            providers: [product_service_1.ProductService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [product_service_1.ProductService])
     ], AppComponent);
     return AppComponent;
 }());
