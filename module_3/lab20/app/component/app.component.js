@@ -9,51 +9,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var TEACHERS = [
+    {
+        id: 10,
+        name: "Jorge Cortes",
+        rooms: ['100', '101'],
+        studies: ['Español', 'Matemáticas'],
+    },
+    {
+        id: 20,
+        name: "Sandra Beltrán",
+        rooms: ['201', '202'],
+        studies: ['Español', 'Inglés']
+    },
+    {
+        id: 30,
+        name: "Pablo Espnoza",
+        rooms: ['300', '303'],
+        studies: ['Cálculo', 'Filosofia', 'Ética']
+    }
+];
 var STUDENTS = [
     {
-        id: 1,
-        name: "Jorge Cortes",
+        id: 10,
+        name: "Diana Mejia",
         classes: ['Español', 'Matemáticas'],
         grade: 10
     },
     {
-        id: 2,
-        name: "Sandra Beltrán",
+        id: 20,
+        name: "Jhon Cáceres",
         classes: ['Español', 'Inglés'],
         grade: 11
     },
     {
-        id: 3,
-        name: "Dalia Bermúdez",
+        id: 30,
+        name: "Andrea Fernandez",
         classes: ['Cálculo', 'Filosofia', 'Ética'],
-        grade: 11
-    }
-];
-var TEACHERS = [
-    {
-        id: 10,
-        name: "Mauricio Vacca",
-        rooms: ['100', '101'],
-        studies: ['Sistemas', 'MAtematicas']
-    },
-    {
-        id: 11,
-        name: "Nidia Gonzalez",
-        rooms: ['200', '201'],
-        studies: ['Contabilidad']
+        grade: 9
     }
 ];
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Colegio";
-        this.students = STUDENTS;
         this.teachers = TEACHERS;
+        this.students = STUDENTS;
     }
-    AppComponent.prototype.onSelect = function (student) {
-        this.selected = student;
-    };
     AppComponent.prototype.onSelect = function (teacher) {
         this.selected = teacher;
+    };
+    AppComponent.prototype.onSelect = function (student) {
+        this.selected = student;
     };
     AppComponent = __decorate([
         core_1.Component({
