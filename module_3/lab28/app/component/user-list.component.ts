@@ -1,37 +1,37 @@
 import {Component, OnInit} from '@angular/core';
-import { Product } from '../model/user';
-import {ProductService} from "../service/user.service";
+import { User } from '../model/user';
+import {UserService} from "../service/user.service";
 import {Router} from "@angular/router";
 
 @Component({
     selector: 'user-list-app',
-    templateUrl: 'app/templates/product-list.html',
-    providers: [ProductService]
+    templateUrl: 'app/templates/user-list.html',
+    providers: [UserService]
 })
-export class ProductListComponent implements OnInit {
-    title: string = "los productos del Año";
+export class UserListComponent implements OnInit {
+    title: string = "los usuarios del Año";
 
-    selected: Product;
+    selected: User;
 
-    products: Product[];
+    users: User[];
 
-    constructor(private router: Router, private productService: ProductService) {
+    constructor(private router: Router, private userService: UserService) {
 
     }
 
-    getProducts() {
-        this.productService.getProducts().then(products => this.products = products);
+    getUsers() {
+        this.userService.getUsers().then(users => this.users = users);
     }
 
     ngOnInit(): void {
-        this.getProducts();
+        this.getUsers();
     }
 
-    onSelect(product: Product){
-        this.selected = product;
+    onSelect(user: User){
+        this.selected = user;
     }
 
     gotoDetail(): void {
-        this.router.navigate(['product/detail/', this.selected.id]);
+        this.router.navigate(['user/detail/', this.selected.id]);
     }
 }

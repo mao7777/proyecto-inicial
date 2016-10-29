@@ -11,6 +11,8 @@ import {HomeComponent} from "./component/home.component";
 import {APP_BASE_HREF} from "@angular/common";
 import {ProductListComponent} from "./component/product-list.component";
 import {ProductDetailComponent} from "./component/product-detail.component";
+import {UserListComponent} from "./component/user-list.component";
+import {UserDetailComponent} from "./component/user-detail.component";
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import {ProductDetailComponent} from "./component/product-detail.component";
       HomeComponent,
       AboutComponent,
       ProductListComponent,
-      ProductDetailComponent
+      ProductDetailComponent,
+      UserListComponent,
+      UserDetailComponent
   ],
   providers: [
       {

@@ -11,7 +11,7 @@ import {ActivatedRoute, Params} from "@angular/router";
 
 export class UserDetailComponent implements OnInit {
 
-    product: User;
+    user: User;
     constructor(
         private userService: UserService,
         private route: ActivatedRoute,
@@ -20,7 +20,7 @@ export class UserDetailComponent implements OnInit {
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
-            this.userService.getProduct(id)
+            this.userService.getUser(id)
                 .then(user => this.user = user);
         });
     }

@@ -1,8 +1,6 @@
 <h1>{{ title }}</h1>
-<ul>
-    <li *ngFor="let user of users" 
-        (click)="onSelect(user)"
-    >
-        <span>{{user.id}}</span> {{user.name | uppercase }} 
-    </li>
-</ul>
+<div *ngIf="user">
+    <hr />
+    <label>Name: </label><br />
+    <input [(ngModel)]="user.name" placeholder="name"><br />
+</div>
