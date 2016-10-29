@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
     providers: [UserService]
 })
 export class UserListComponent implements OnInit {
-    title: string = "los usuarios del Año";
+    title: string = "Mis usuarios";
 
     selected: User;
 

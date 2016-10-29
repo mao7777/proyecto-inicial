@@ -15,7 +15,7 @@ var UserListComponent = (function () {
     function UserListComponent(router, userService) {
         this.router = router;
         this.userService = userService;
-        this.title = "los usuarios del Año";
+        this.title = "Mis usuarios";
     }
     UserListComponent.prototype.getUsers = function () {
         var _this = this;
