@@ -8,7 +8,7 @@ import {ProductService} from "../service/product.service";
     providers: [ProductService]
 })
 export class AppComponent {
-	title: string = "los productos del Año";
+    title: string = "los productos del Año";
 
     selected: Product;
 
@@ -19,7 +19,16 @@ export class AppComponent {
     }
 
     getProducts() {
-        this.productService.getProducts().then(products => this.products = products);
+        this.productService.getProducts()
+            .subscribe(
+            products => {
+                this.products = products;
+            },
+
+            error => {
+                console.log(error);
+            }
+        );
     }
 
     ngOnInit(): void {
@@ -34,24 +43,9 @@ export class AppComponent {
         name = name.trim();
         if (!name) { return; }
         this.productService.create(name)
-            .then(product => {
+            .subscribe(product => {
                 this.products.push(product);
                 this.selected = null;
             });
     }
-
-
-  /* erase(id_product: number): void {
-        
-        if (!id_product) { return; }
-        this.productService.delete(id_product)
-            .then(product => {
-                this.products. .delete(product);
-                this.selected = null;
-            });
-    }*/
-    
-
-
-
 }

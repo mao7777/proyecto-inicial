@@ -10,45 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-require('rxjs/add/operator/toPromise');
+require('rxjs/add/operator/map');
+var Rx_1 = require('rxjs/Rx');
 var ProductService = (function () {
     function ProductService(http) {
         this.http = http;
-        this.productsURI = 'http://localhost:3000/api/products';
+        this.productsURI = 'http://138.68.0.83:7070/api/v1/products';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     ProductService.prototype.getProducts = function () {
         return this.http.get(this.productsURI)
-            .toPromise()
-            .then(function (response) { return response.json().data; })
+            .map(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
     ProductService.prototype.update = function (product) {
         var url = this.productsURI + "/" + product.id;
         return this.http
             .put(url, JSON.stringify(product), { headers: this.headers })
-            .toPromise()
-            .then(function () { return product; })
-            .catch(this.handleError);
-    };
-    ProductService.prototype.delete = function (product) {
-        var url = this.productsURI + "/" + product.id;
-        return this.http
-            .delete(url, { headers: this.headers })
-            .toPromise()
-            .then(function () { return product; })
+            .map(function () { return product; })
             .catch(this.handleError);
     };
     ProductService.prototype.create = function (name) {
         return this.http
             .post(this.productsURI, JSON.stringify({ name: name }), { headers: this.headers })
-            .toPromise()
-            .then(function (res) { return res.json().data; })
+            .map(function (res) { return res.json().data; })
             .catch(this.handleError);
     };
     ProductService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
+        return Rx_1.Observable.throw(error.message || error);
     };
     ProductService = __decorate([
         core_1.Injectable(), 
