@@ -7,14 +7,15 @@ import {Observable} from 'rxjs/Rx';
 @Injectable()
 export class ProductService {
 
-    private productsURI = 'http://138.68.0.83:7070/api/v1/products';
+    /*private productsURI = 'http://localhost:3000/api/products';*/
+    private productsURI = 'http://138.68.0.83:7070/api/v1/product/list';
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http) { }
 
     getProducts(): Observable<Product[]> {
         return this.http.get(this.productsURI)
-            .map(response => response.json().data as Product[])
+            .map(response => response.url as Product[])
             .catch(this.handleError);
     }
 
