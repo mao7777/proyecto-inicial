@@ -13,9 +13,11 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./component/app.component');
 var product_detail_component_1 = require('./component/product-detail.component');
+var user_detail_component_1 = require('./component/user-detail.component');
 var http_1 = require("@angular/http");
 /*import {InMemoryProductService} from "./mock/in-memory-product.service";*/
 var product_service_1 = require("./service/product.service");
+var user_service_1 = require("./service/user.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,9 +31,10 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                product_detail_component_1.ProductDetailComponent
+                product_detail_component_1.ProductDetailComponent,
+                user_detail_component_1.UserDetailComponent
             ],
-            providers: [product_service_1.ProductService],
+            providers: [product_service_1.ProductService, user_service_1.UserService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -12,40 +12,40 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require('rxjs/add/operator/map');
 var Rx_1 = require('rxjs/Rx');
-var ProductService = (function () {
-    function ProductService(http) {
+var UserService = (function () {
+    function UserService(http) {
         this.http = http;
-        /*private productsURI = 'http://localhost:3000/api/products';*/
-        this.productsURI = 'http://138.68.0.83:7070/api/v1/product/list';
+        this.usersURI = 'http://138.68.0.83:7070/api/v1/user/list';
+        /*private usersURI = 'http://localhost:3000/api/users';*/
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
-    ProductService.prototype.getProducts = function () {
-        return this.http.get(this.productsURI)
+    UserService.prototype.getUsers = function () {
+        return this.http.get(this.usersURI)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    ProductService.prototype.update = function (product) {
-        var url = this.productsURI + "/" + product.id;
+    UserService.prototype.update = function (user) {
+        var url = this.usersURI + "/" + user.id;
         return this.http
-            .put(url, JSON.stringify(product), { headers: this.headers })
-            .map(function () { return product; })
+            .put(url, JSON.stringify(user), { headers: this.headers })
+            .map(function () { return user; })
             .catch(this.handleError);
     };
-    ProductService.prototype.create = function (name) {
+    UserService.prototype.create = function (name) {
         return this.http
-            .post(this.productsURI, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.usersURI, JSON.stringify({ name: name }), { headers: this.headers })
             .map(function (res) { return res.json().data; })
             .catch(this.handleError);
     };
-    ProductService.prototype.handleError = function (error) {
+    UserService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Rx_1.Observable.throw(error.message || error);
     };
-    ProductService = __decorate([
+    UserService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], ProductService);
-    return ProductService;
+    ], UserService);
+    return UserService;
 }());
-exports.ProductService = ProductService;
-//# sourceMappingURL=product.service.js.map
+exports.UserService = UserService;
+//# sourceMappingURL=user.service.js.map

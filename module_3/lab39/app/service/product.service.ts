@@ -31,9 +31,10 @@ export class ProductService {
 
         return this.http
             .post(this.productsURI, JSON.stringify({name: name}), {headers: this.headers})
-            .map(res => res.json().data)
+            .map(res => res.json())
             .catch(this.handleError);
     }
+
 
     private handleError(error: any): Observable<any> {
         console.error('An error occurred', error); // for demo purposes only

@@ -34,7 +34,7 @@ var ProductService = (function () {
     ProductService.prototype.create = function (name) {
         return this.http
             .post(this.productsURI, JSON.stringify({ name: name }), { headers: this.headers })
-            .map(function (res) { return res.json().data; })
+            .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
     ProductService.prototype.handleError = function (error) {

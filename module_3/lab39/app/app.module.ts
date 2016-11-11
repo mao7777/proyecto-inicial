@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent }   from './component/app.component';
 import { ProductDetailComponent } from './component/product-detail.component';
+import { UserDetailComponent } from './component/user-detail.component';
 import {HttpModule} from "@angular/http";
 import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
 /*import {InMemoryProductService} from "./mock/in-memory-product.service";*/
 import {ProductService} from "./service/product.service";
+import {UserService} from "./service/user.service";
 
 
 @NgModule({
@@ -19,9 +21,10 @@ import {ProductService} from "./service/product.service";
   ],
   declarations: [
       AppComponent,
-      ProductDetailComponent
+      ProductDetailComponent,
+      UserDetailComponent
   ],
-    providers: [ProductService],
+    providers: [ProductService,UserService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
