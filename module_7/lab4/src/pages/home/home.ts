@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import { ListPage } from '../list/list';
+import { List2Page } from '../list2/list2';
 
 
 @Component({
@@ -31,5 +32,10 @@ export class HomePage {
   loadList() {
   	this.navCtrl.push(ListPage);
   }
+
+  load2List() {
+    this.navCtrl.push(List2Page);
+  }
+
 
 }
