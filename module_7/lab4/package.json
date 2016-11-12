@@ -5,9 +5,12 @@
   "private": true,
   "scripts": {
     "build": "ionic-app-scripts build",
-"serve": "ionic-app-scripts serve",
-"watch": "ionic-app-scripts watch"
-
+    "watch": "ionic-app-scripts watch",
+    "serve:before": "watch",
+    "emulate:before": "build",
+    "deploy:before": "build",
+    "build:before": "build",
+    "run:before": "build"
   },
   "dependencies": {
     "@angular/common": "2.1.1",
@@ -27,10 +30,10 @@
     "zone.js": "0.6.21"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "0.0.43",
+    "@ionic/app-scripts": "0.0.39",
     "typescript": "2.0.6"
   },
-  "description": "Lab4: An Ionic project",
+  "description": "Lab1: An Ionic project",
   "cordovaPlugins": [
     "cordova-plugin-device",
     "cordova-plugin-console",
