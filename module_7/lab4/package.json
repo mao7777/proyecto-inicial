@@ -4,8 +4,10 @@
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
-    "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "build": "ionic-app-scripts build",
+"serve": "ionic-app-scripts serve",
+"watch": "ionic-app-scripts watch"
+
   },
   "dependencies": {
     "@angular/common": "2.1.1",

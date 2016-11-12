@@ -12,4 +12,12 @@ export class HomePage {
     
   }
 
+  public product: any = {
+  	id: 1,
+  	name: "phone",
+  	type: "any",
+  	quantity: 4000,
+  	price: 500000
+  }
+
 }
