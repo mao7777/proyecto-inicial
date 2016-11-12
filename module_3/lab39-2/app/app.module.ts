@@ -8,15 +8,13 @@ import {ProductListComponent} from "./component/product-list.component";
 import {ProductDetailComponent} from "./component/product-detail.component";
 import {UserListComponent} from "./component/user-list.component";
 import {UserDetailComponent} from "./component/user-detail.component";
-import {HttpModule} from "@angular/http";
-import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
+
 
 @NgModule({
   imports:      [
       BrowserModule,
       FormsModule,
-      AppRoutingModule,
-      HttpModule
+      AppRoutingModule
   ],
   declarations: [
       AppComponent,

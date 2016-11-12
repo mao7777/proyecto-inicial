@@ -1,30 +1,3 @@
-/*import {Component, OnInit} from '@angular/core';
-import { Product } from '../model/product';
-import {ProductService} from "../service/product.service";
-import {ActivatedRoute, Params} from "@angular/router";
-
-@Component({
-    selector: 'product-detail-app',
-    templateUrl: 'app/templates/product-detail.html',
-    providers: [ProductService]
-})
-
-export class ProductDetailComponent implements OnInit {
-
-    product: Product;
-    constructor(
-        private productService: ProductService,
-        private route: ActivatedRoute,
-    ) {}
-
-    ngOnInit(): void {
-        this.route.params.forEach((params: Params) => {
-            let id = +params['id'];
-            this.productService.getProduct(id)
-                .then(product => this.product = product);
-        });
-    }
-}*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -36,26 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var product_1 = require('../model/product');
 var product_service_1 = require("../service/product.service");
+var router_1 = require("@angular/router");
 var ProductDetailComponent = (function () {
-    function ProductDetailComponent(productService) {
+    function ProductDetailComponent(productService, route) {
         this.productService = productService;
+        this.route = route;
     }
-    ProductDetailComponent.prototype.save = function () {
-        this.productService.update(this.product)
-            .subscribe(function (response) { console.log(response); }, function (err) { console.log(err); });
+    ProductDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.forEach(function (params) {
+            var id = +params['id'];
+            _this.productService.getProduct(id)
+                .then(function (product) { return _this.product = product; });
+        });
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', product_1.Product)
-    ], ProductDetailComponent.prototype, "product", void 0);
     ProductDetailComponent = __decorate([
         core_1.Component({
-            selector: 'product-detail',
+            selector: 'product-detail-app',
             templateUrl: 'app/templates/product-detail.html'
         }), 
-        __metadata('design:paramtypes', [product_service_1.ProductService])
+        __metadata('design:paramtypes', [product_service_1.ProductService, router_1.ActivatedRoute])
     ], ProductDetailComponent);
     return ProductDetailComponent;
 }());

@@ -15,7 +15,6 @@ var Rx_1 = require('rxjs/Rx');
 var ProductService = (function () {
     function ProductService(http) {
         this.http = http;
-        /*private productsURI = 'http://localhost:3000/api/products';*/
         this.productsURI = 'http://138.68.0.83:7070/api/v1/product/list';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }

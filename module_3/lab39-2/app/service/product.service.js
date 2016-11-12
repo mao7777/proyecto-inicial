@@ -11,11 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require('rxjs/add/operator/map');
-var Rx_1 = require('rxjs/Rx');
 var ProductService = (function () {
     function ProductService(http) {
         this.http = http;
-        /*private productsURI = 'http://localhost:3000/api/products';*/
         this.productsURI = 'http://138.68.0.83:7070/api/v1/product/list';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
@@ -24,9 +22,9 @@ var ProductService = (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    ProductService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
-        return Rx_1.Observable.throw(error.message || error);
+    ProductService.prototype.getProduct = function (id) {
+        return this.getProducts()
+            .suscribe(function (products) { return products.find(function (product) { return product.id === id; }); });
     };
     ProductService = __decorate([
         core_1.Injectable(), 

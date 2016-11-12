@@ -1,6 +1,6 @@
-/*import {InMemoryDbService} from "angular2-in-memory-web-api";*/
-import {Product} from '../model/product';
-export class InMemoryProductService /*implements InMemoryDbService */{
+import {InMemoryDbService} from "angular2-in-memory-web-api";
+
+export class InMemoryProductService implements InMemoryDbService {
     createDb() {
         let products = [
             {

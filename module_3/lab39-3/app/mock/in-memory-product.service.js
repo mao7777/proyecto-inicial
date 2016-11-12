@@ -1,8 +1,8 @@
 "use strict";
-var InMemoryProductService /*implements InMemoryDbService */ = (function () {
-    function InMemoryProductService /*implements InMemoryDbService */() {
+var InMemoryProductService = (function () {
+    function InMemoryProductService() {
     }
-    InMemoryProductService /*implements InMemoryDbService */.prototype.createDb = function () {
+    InMemoryProductService.prototype.createDb = function () {
         var products = [
             {
                 id: 1,
@@ -31,7 +31,7 @@ var InMemoryProductService /*implements InMemoryDbService */ = (function () {
         ];
         return { products: products };
     };
-    return InMemoryProductService /*implements InMemoryDbService */;
+    return InMemoryProductService;
 }());
-exports.InMemoryProductService /*implements InMemoryDbService */ = InMemoryProductService /*implements InMemoryDbService */;
+exports.InMemoryProductService = InMemoryProductService;
 //# sourceMappingURL=in-memory-product.service.js.map

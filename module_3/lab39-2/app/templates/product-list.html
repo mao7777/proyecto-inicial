@@ -1,14 +1,4 @@
 <h1>{{ title }}</h1>
-
-<div>
-    <label>Product name:</label> <input #productName />
-    <button (click)="add(productName.value); productName.value=''">
-        Add
-    </button>
-</div>
-
-
-<hr />
 <ul>
     <li *ngFor="let product of products"
         [class.pepito]="product === selected"
@@ -17,4 +7,9 @@
     </li>
 </ul>
 
-<product-detail [product]="selected"></product-detail>
+<div *ngIf="selected">
+    <h2>
+        {{selected.name | uppercase}} is my Product
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>

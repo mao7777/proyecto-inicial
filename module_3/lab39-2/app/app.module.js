@@ -18,7 +18,6 @@ var product_list_component_1 = require("./component/product-list.component");
 var product_detail_component_1 = require("./component/product-detail.component");
 var user_list_component_1 = require("./component/user-list.component");
 var user_detail_component_1 = require("./component/user-detail.component");
-var http_1 = require("@angular/http");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,8 +26,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                app_routing_module_1.AppRoutingModule,
-                http_1.HttpModule
+                app_routing_module_1.AppRoutingModule
             ],
             declarations: [
                 app_component_1.AppComponent,
