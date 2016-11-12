@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
+var app_routing_module_1 = require("./routing/app-routing.module");
 var app_component_1 = require('./component/app.component');
 var product_detail_component_1 = require('./component/product-detail.component');
 var user_detail_component_1 = require('./component/user-detail.component');
@@ -27,7 +28,8 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule /*,
-                InMemoryWebApiModule.forRoot(InMemoryProductService, {delay: 500})*/
+                InMemoryWebApiModule.forRoot(InMemoryProductService, {delay: 500})*/,
+                app_routing_module_1.AppRoutingModule
             ],
             declarations: [
                 app_component_1.AppComponent,

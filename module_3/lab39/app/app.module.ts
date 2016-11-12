@@ -1,6 +1,8 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import {AppRoutingModule} from "./routing/app-routing.module";
+import {APP_BASE_HREF} from "@angular/common";
 
 import { AppComponent }   from './component/app.component';
 import { ProductDetailComponent } from './component/product-detail.component';
@@ -17,7 +19,8 @@ import {UserService} from "./service/user.service";
       BrowserModule,
       FormsModule,
       HttpModule/*,
-      InMemoryWebApiModule.forRoot(InMemoryProductService, {delay: 500})*/
+      InMemoryWebApiModule.forRoot(InMemoryProductService, {delay: 500})*/,
+      AppRoutingModule
   ],
   declarations: [
       AppComponent,

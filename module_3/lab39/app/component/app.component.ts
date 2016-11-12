@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
-import { User } from '../model/user';
-import {UserService} from "../service/user.service";
+import { Product } from '../model/product';
+import {ProductService} from "../service/product.service";
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/templates/user-list.html',
-    providers: [UserService]
+    templateUrl: 'app/templates/product-list.html',
+    providers: [ProductService]
 })
 export class AppComponent {
-    title: string = "los usuarios del Año";
+    title: string = "los productos del Año";
 
-    selected: User;
+    selected: Product;
 
-    users: User[];
+    products: Product[];
 
-    constructor(private userService: UserService) {
+    constructor(private productService: ProductService) {
 
     }
 
-    getUsers() {
-        this.userService.getUsers()
+    getProducts() {
+        this.productService.getProducts()
             .subscribe(
-            users => {
-                this.users = users;
+            products => {
+                this.products = products;
             },
 
             error => {
@@ -32,20 +32,21 @@ export class AppComponent {
     }
 
     ngOnInit(): void {
-        this.getUsers();
+        this.getProducts();
     }
 
-    onSelect(user: User){
-        this.selected = user;
+    onSelect(product: Product){
+        this.selected = product;
     }
 
     add(name: string): void {
         name = name.trim();
         if (!name) { return; }
-        this.userService.create(name)
-            .subscribe(user => {
-                this.users.push(user);
+        this.productService.create(name)
+            .subscribe(product => {
+                this.products.push(product);
                 this.selected = null;
             });
     }
 }
+ 

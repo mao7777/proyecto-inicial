@@ -12,13 +12,14 @@ var router_1 = require("@angular/router");
 var core_1 = require("@angular/core");
 var product_list_component_1 = require("../component/product-list.component");
 var customer_list_component_1 = require("../component/customer-list.component");
+var lineitem_list_component_1 = require("../component/lineitem-list.component");
 /*import {ProductDetailComponent} from "../component/product-detail.component";*/
 /*import {CustomerDetailComponent} from "../component/customer-detail.component";*/
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'product-list', component: product_list_component_1.ProductListComponent },
     /* { path: 'product/detail/:id', component: ProductDetailComponent },*/
-    /*  { path: 'lineitem-list', component: LineitemListComponent },*/
+    { path: 'lineitem-list', component: lineitem_list_component_1.LineitemListComponent },
     { path: 'customer-list', component: customer_list_component_1.CustomerListComponent }
 ];
 var AppRoutingModule = (function () {
