@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-
+import {PRODUCTS} from "../mock/product-mock";
 /*
   Generated class for the Service provider.
 
@@ -9,10 +9,8 @@ import 'rxjs/add/operator/map';
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class Service {
-
-  constructor(public http: Http) {
-    console.log('Hello Service Provider');
-  }
-
+export class ProductService{
+    getProducts(){
+        return Promise.resolve(PRODUCTS);
+    }
 }
