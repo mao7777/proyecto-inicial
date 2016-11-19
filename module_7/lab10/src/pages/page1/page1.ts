@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController,MenuController } from 'ionic-angular';
 import { ProductListPage} from '../page2/page2';
 import { UserListPage} from '../page3/page3';
 
@@ -9,7 +9,7 @@ import { UserListPage} from '../page3/page3';
 })
 export class Page1 {
 
-  constructor(public navCtrl: NavController,public modalCtrl: ModalController) {
+  constructor(public menuCtrl: MenuController, public navCtrl: NavController,public modalCtrl: ModalController) {
     
   }
 
@@ -24,5 +24,17 @@ export class Page1 {
     let profileModal = this.modalCtrl.create(UserListPage);
    profileModal.present();
    }
+
+ openMenu() {
+   this.menuCtrl.open();
+ }
+
+ closeMenu() {
+   this.menuCtrl.close();
+ }
+
+ toggleMenu() {
+   this.menuCtrl.toggle();
+ }
 
 }
