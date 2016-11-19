@@ -32,9 +32,15 @@
     <button ion-button color="danger" block round>Danger</button>
   </p>
     <p>
-    <button ion-button color="dark" (click)="Products">Dark</button>
+    <button ion-button color="dark" (click)="loadList3()">Dark</button>
   </p>
-  
-  <a routerLink="/product-list" routerLinkActive="active">Products</a>
-  
+ 
+  <ul>
+    <li *ngFor="let product of products"
+        [class.pepito]="product === selected"
+        (click)="onSelect(product)">
+        <span>{{product.id}}</span> {{product.name}}
+    </li>
+</ul>
+
 </ion-content>

@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { ListPage } from '../list/list';
 import { List2Page } from '../list2/list2';
 import { ProductListComponent } from '../app/product-list.component';
+import {ProductService} from "../providers/service";
 
 @Component({
   selector: 'page-home',
@@ -37,7 +38,7 @@ export class HomePage {
     this.navCtrl.push(List2Page);
   }
 
-  /*load3List() {
+ /*load3List() {
     this.navCtrl.push(ProductListComponent);
   }*/
 

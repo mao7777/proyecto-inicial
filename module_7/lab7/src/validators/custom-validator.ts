@@ -7,10 +7,8 @@ interface ValidationResult {
 export class PasswordValidators {
  
     public static checkPatternCharacterValidator(control: FormControl): ValidationResult {
-        var valid = /^123/.test(control.value);
-        if (valid) {
-            return {checkPatternCharacterValidator: true};
+        if(!control.value.matcth(/^123456/)) {
+        	return {checkPatternCharacterValidator: true};
         }
-        return null;
     }
-}
+} 
