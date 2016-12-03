@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {PasswordValidators} from '../../validators/custom-validator';
+import {CustomValidators} from '../../validators/custom-validator';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -21,12 +21,11 @@ export class ContactPage {
   
   private createUserForm() {
     return this.formBuilder.group({
-      name: ['', Validators.minLength(3)],
-      lastName: ['', Validators.required, Validators.minLength(3)],
-      email: ['', Validators.required, Validators.minLength(6)],
-      dateBirth: ['', Validators.required],
-      password: ['', Validators.required, Validators.minLength(6), PasswordValidators],
-      gender: ['', Validators.required, Validators.minLength(6)],
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      phone: ['', [Validators.required, Validators.minLength(10),Validators.maxLength(10), CustomValidators.priceValidator]],
+      email: ['', [Validators.required, Validators.minLength(6), CustomValidators.emailValidator]],
+      password: ['', [Validators.required, CustomValidators.passwordValidator]],
+      gender: ['', Validators.required],
     });
   }
 

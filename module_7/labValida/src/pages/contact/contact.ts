@@ -21,12 +21,12 @@ export class ContactPage {
   
   private createUserForm() {
     return this.formBuilder.group({
-      name: ['', Validators.minLength(3)],
-      lastName: ['', Validators.required, Validators.minLength(3)],
-      email: ['', Validators.required, Validators.minLength(6)],
-      dateBirth: ['', Validators.required],
-      password: ['', Validators.required, Validators.minLength(6), PasswordValidators],
-      gender: ['', Validators.required, Validators.minLength(6)],
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['',  [Validators.required, Validators.minLength(3)]],
+      email: ['',  [Validators.required, Validators.minLength(6)]],
+      dateBirth: ['',  [Validators.required]],
+      password: ['',  [Validators.required, Validators.minLength(6), PasswordValidators]],
+      gender: ['',  [Validators.required, Validators.minLength(6)]],
     });
   }
 
