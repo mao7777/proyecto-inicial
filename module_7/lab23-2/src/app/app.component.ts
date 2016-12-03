@@ -6,8 +6,9 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
- // templateUrl: 'app.html'
-  template: `<ion-nav [root]="rootPage"></ion-nav>`
+ templateUrl: 'app.html'
+ //template: `<ion-nav [root]="rootPage"></ion-nav>`
+
 })
 export class MyApp {
   rootPage = TabsPage;
@@ -19,8 +20,8 @@ export class MyApp {
        this.userService.openDatabase()
         .then(() => this.userService.createTable())
         .then(() => {
-          //this.rootPage = TabsPage;
-
+          //this.rootPage = HomePage;
+          this.rootPage = TabsPage;
         })
     });
   }

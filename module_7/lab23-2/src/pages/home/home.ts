@@ -28,7 +28,7 @@ export class HomePage {
   alertNewUser(){
     let alert = this.alertCtrl.create({
       title: 'Crear Usuario',
-      message: 'Nombre del Usuario',
+      message: 'Datos del Usuario',
       inputs: [
         {
           name: 'name',
