@@ -15,29 +15,30 @@
 
 </ion-header>
 
-
-<ion-content padding>
-	<div *ngIf="product">
-    	<hr />
+  <form [formGroup]="productForm" (ngSubmit)="add()" novalidate>
+  <div *ngIf="product">
+      <hr />
       <ion-list>
         <ion-item>
-          <ion-label stacked>Name:</ion-label>
-          <ion-input type="text" [(ngModel)]="product.name" placeholder="name"></ion-input>
+          <ion-label stacked>Nombre:</ion-label>
+          <ion-input formControlName="name" type="text" placeholder="name"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label stacked>Type:</ion-label>
-          <ion-input type="text" [(ngModel)]="product.type" placeholder="tipo"></ion-input>
+          <ion-label stacked>Tipo:</ion-label>
+          <ion-input formControlName="type" type="text"  placeholder="type"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label stacked>Price:</ion-label>
-          <ion-input type="text" [(ngModel)]="product.price" placeholder="precio"></ion-input>
-        </ion-item>
+          <ion-label stacked>Precio:</ion-label>
+          <ion-input formControlName="price" type="text"  placeholder="price"></ion-input>
+        </ion-item>        
         <ion-item>
-          <ion-label stacked>Quantity:</ion-label>
-          <ion-input type="text" [(ngModel)]="product.quantity" placeholder="cantidad"></ion-input>
+          <ion-label stacked>Cantidad:</ion-label>
+          <ion-input formControlName="quantity" type="text"  placeholder="quantity"></ion-input>
         </ion-item>
       </ion-list>
-      <button ion-button color="secondary" (click)="add()">Agregar Producto</button>
-	</div>
+      <button ion-button block type="submit" [disabled]="!productForm.valid">Agregar Producto</button>
+      <!--button ion-button color="secondary" (click)="add()">Registrarme</button-->
+  </div>
+  </form>
 
 </ion-content>

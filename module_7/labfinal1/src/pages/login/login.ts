@@ -36,18 +36,20 @@ export class Login {
   {
       this.userService.singUpUser(email, password).subscribe(user=>{
         console.log("cookie: " + user.cookie);
+        console.log("usuario: " + user.error);
 
-        if(user.cookie != ''){
-          this.storage.set("email", user.email);
-          this.storage.set("cookie", user.cookie);
-          this.navCtrl.push(Home);
-        }else{          
+        if(!isNaN(user.error)){
           let alert = this.alertCtrl.create({
           title: 'usuario Invalido',
           subTitle: 'Verifique su información',
           buttons: ['Aceptar']
           });
           alert.present(); 
+          
+        }else{   
+          this.storage.set("email", user.email);
+          this.storage.set("cookie", user.cookie);
+          this.navCtrl.push(Home);          
         }        
 
       }),
